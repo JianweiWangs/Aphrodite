@@ -1,0 +1,4 @@
+module CNIOOpenSSL {
+    umbrella "/Users/wangjianwei/Documents/Learn/Swift/Aphrodite/Aphrodite/.build/checkouts/swift-nio-ssl.git--5552230333020128650/Sources/CNIOOpenSSL/include"
+    export *
+}
