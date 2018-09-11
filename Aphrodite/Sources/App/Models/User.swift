@@ -4,10 +4,10 @@
 //
 //  Created by Wang Jianwei on 2018/9/9.
 //
-import FluentSQLite
+import FluentPostgreSQL
 import Vapor
 
-final class User: SQLiteModel {
+final class User: PostgreSQLModel {
     var id: Int?
     var username: String
     
