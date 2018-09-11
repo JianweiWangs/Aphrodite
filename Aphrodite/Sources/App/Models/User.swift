@@ -4,10 +4,10 @@
 //
 //  Created by Wang Jianwei on 2018/9/9.
 //
-import FluentSQLite
+import FluentMySQL
 import Vapor
 
-final class User: SQLiteModel {
+final class User: MySQLModel {
     var id: Int?
     var username: String
     

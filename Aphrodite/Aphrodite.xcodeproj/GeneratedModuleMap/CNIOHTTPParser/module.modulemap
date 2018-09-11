@@ -1,4 +1,4 @@
 module CNIOHTTPParser {
-    umbrella "/Users/wangjianwei/Documents/Learn/Swift/Aphrodite/Aphrodite/.build/checkouts/swift-nio.git--3193826231397329450/Sources/CNIOHTTPParser/include"
+    umbrella "/Users/wangjianwei/GitHub/Aphrodite/Aphrodite/.build/checkouts/swift-nio.git-3108475404973543938/Sources/CNIOHTTPParser/include"
     export *
 }
