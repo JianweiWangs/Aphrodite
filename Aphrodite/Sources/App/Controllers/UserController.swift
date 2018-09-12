@@ -7,14 +7,25 @@
 import Vapor
 
 final class UserController {
-    static func users(_ req: Request) throws -> Future<[User]> {
+    static func read(_ req: Request) throws -> Future<[User]> {
         return User.query(on: req).all()
     }
-    static func addUser(_ req: Request) throws -> Future<[String: String]> {
+    static func create(_ req: Request) throws -> Future<User> {
         return try req.content.decode(User.self).flatMap {
-            return $0.save(on: req).map { _ in
-                return ["code": "200"]
+            return $0.save(on: req)
+        }
+    }
+    static func update(_ req: Request) throws -> Future<User> {
+        return try req.parameters.next(User.self).flatMap { user in
+            return try req.content.decode(User.self).flatMap { newUser in
+                user.username = newUser.username
+                return user.save(on: req)
             }
         }
+    }
+    static func delete(_ req: Request) throws -> Future<HTTPStatus> {
+        return try req.parameters.next(User.self).flatMap { user in
+            user.delete(on: req)
+        }.transform(to: .ok)
     }
 }
