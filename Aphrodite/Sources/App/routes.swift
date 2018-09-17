@@ -8,5 +8,5 @@ public func routes(_ router: Router) throws {
     }
     router.get("users", use: UserController.users)
     router.post("addUser", use: UserController.addUser)
-    
+    router.get("view", use: UserController.view)
 }

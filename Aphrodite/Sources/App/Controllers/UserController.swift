@@ -17,4 +17,7 @@ final class UserController {
             }
         }
     }
+    static func view(_ req: Request) throws -> Future<View> {
+        return try req.view().render("register")
+    }
 }
