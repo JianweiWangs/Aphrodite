@@ -15,7 +15,6 @@ public func routes(_ router: Router) throws {
     
     let authSessionRouter = router.grouped(User.authSessionsMiddleware())
     authSessionRouter.post("login", use: UserController.login)
-
     
     let protectedRouter = authSessionRouter.grouped(RedirectMiddleware<User>(path: "/login"))
     protectedRouter.get("profile", use: UserController.profile)
