@@ -8,4 +8,6 @@ public func routes(_ router: Router) throws {
     }
     router.get("users", use: UserController.list)
     router.post("users", use: UserController.create)
+    router.post("users", User.parameter, "update", use: UserController.update)
+    router.post("users", User.parameter, "delete", use: UserController.delete)
 }
